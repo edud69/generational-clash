@@ -53,7 +53,7 @@ export function Compare() {
             <div className="text-xs uppercase tracking-wide text-ink-500 dark:text-ink-400 font-semibold mb-1">Écart générationnel</div>
             <div className="text-ink-900 dark:text-ink-100">
               Environ <strong>{Math.round(yearGap)} ans</strong> séparent le centre des deux générations.
-              {yearGap > 40 && ' C'est probablement deux fois la distance entre un parent et son enfant.'}
+              {yearGap > 40 && " C\u2019est probablement deux fois la distance entre un parent et son enfant."}
             </div>
           </div>
 
