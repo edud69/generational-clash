@@ -13,7 +13,7 @@ export function GenerationDetail() {
   if (!g) {
     return (
       <div className="container-page py-16">
-        <p>Génération introuvable. <Link to="/generations" className="text-brand-700">Retour à la liste</Link>.</p>
+        <p>Génération introuvable. <Link to="/generations" className="text-brand-700 dark:text-brand-400">Retour à la liste</Link>.</p>
       </div>
     )
   }
@@ -23,7 +23,7 @@ export function GenerationDetail() {
 
   return (
     <div className="container-page py-10">
-      <Link to="/generations" className="text-sm text-brand-700 hover:underline">← Toutes les générations</Link>
+      <Link to="/generations" className="text-sm text-brand-700 dark:text-brand-400 hover:underline">← Toutes les générations</Link>
 
       <div className={`mt-4 rounded-3xl p-6 sm:p-10 bg-gradient-to-br ${g.color}`}>
         <div className="flex items-start gap-4">
@@ -41,10 +41,10 @@ export function GenerationDetail() {
 
       <div className="grid lg:grid-cols-3 gap-6 mt-8">
         <div className="lg:col-span-2 card p-6">
-          <h2 className="font-display font-bold text-xl mb-2">Vue d’ensemble</h2>
-          <p className="text-ink-700 leading-relaxed">{g.bigPicture}</p>
-          <h3 className="mt-6 font-semibold text-ink-900">Événements et conditions formatrices</h3>
-          <ul className="mt-2 space-y-1 text-ink-700 list-disc list-inside">
+          <h2 className="font-display font-bold text-xl mb-2">Vue d'ensemble</h2>
+          <p className="text-ink-700 dark:text-ink-300 leading-relaxed">{g.bigPicture}</p>
+          <h3 className="mt-6 font-semibold text-ink-900 dark:text-ink-100">Événements et conditions formatrices</h3>
+          <ul className="mt-2 space-y-1 text-ink-700 dark:text-ink-300 list-disc list-inside">
             {g.defining.map(d => <li key={d}>{d}</li>)}
           </ul>
         </div>
@@ -57,8 +57,8 @@ export function GenerationDetail() {
                 onClick={() => setRegion(r.id)}
                 className={`text-xs px-3 py-1.5 rounded-full border transition ${
                   region === r.id
-                    ? 'bg-ink-900 text-white border-ink-900'
-                    : 'bg-white text-ink-700 border-ink-200 hover:border-ink-400'
+                    ? 'bg-ink-900 text-white border-ink-900 dark:bg-ink-100 dark:text-ink-900 dark:border-ink-100'
+                    : 'bg-white text-ink-700 border-ink-200 hover:border-ink-400 dark:bg-ink-700 dark:text-ink-300 dark:border-ink-600 dark:hover:border-ink-400'
                 }`}
               >
                 {r.flag} {r.shortLabel}
@@ -66,16 +66,16 @@ export function GenerationDetail() {
             ))}
           </div>
           {!profile && (
-            <p className="mt-4 text-sm text-ink-600">
+            <p className="mt-4 text-sm text-ink-600 dark:text-ink-400">
               Données détaillées indisponibles pour cette région — sélectionnez-en une autre.
             </p>
           )}
           {profile && (
             <>
-              <h4 className="mt-5 font-semibold text-sm text-ink-900">Valeurs clés</h4>
+              <h4 className="mt-5 font-semibold text-sm text-ink-900 dark:text-ink-100">Valeurs clés</h4>
               <div className="mt-2 flex flex-wrap gap-1.5">
                 {profile.valeurs.map(v => (
-                  <span key={v} className="chip bg-brand-50 text-brand-800 border border-brand-100">{v}</span>
+                  <span key={v} className="chip bg-brand-50 dark:bg-brand-900/30 text-brand-800 dark:text-brand-300 border border-brand-100 dark:border-brand-700">{v}</span>
                 ))}
               </div>
             </>
@@ -87,7 +87,7 @@ export function GenerationDetail() {
         <div className="mt-8">
           <div className="card p-6 mb-4">
             <h2 className="font-display font-bold text-xl">Contexte historique</h2>
-            <p className="mt-2 text-ink-700">{profile.contexteHistorique}</p>
+            <p className="mt-2 text-ink-700 dark:text-ink-300">{profile.contexteHistorique}</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
@@ -123,7 +123,7 @@ function DimensionCard({
         <span className="text-2xl">{icon}</span>
         <h3 className="font-display font-bold">{label}</h3>
       </div>
-      <p className="mt-2 text-ink-700 text-sm leading-relaxed">{text}</p>
+      <p className="mt-2 text-ink-700 dark:text-ink-300 text-sm leading-relaxed">{text}</p>
     </div>
   )
 }

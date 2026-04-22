@@ -9,6 +9,7 @@ import { Compare } from './pages/Compare'
 import { Clashes } from './pages/Clashes'
 import { Sources } from './pages/Sources'
 import { RegionProvider } from './state/RegionContext'
+import { ThemeProvider } from './state/ThemeContext'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -20,6 +21,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
+    <ThemeProvider>
     <RegionProvider>
       <div className="min-h-screen flex flex-col">
         <Header />
@@ -38,5 +40,6 @@ export default function App() {
         <Footer />
       </div>
     </RegionProvider>
+    </ThemeProvider>
   )
 }

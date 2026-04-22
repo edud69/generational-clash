@@ -8,7 +8,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
   body {
-    @apply bg-ink-50 text-ink-900 font-sans;
+    @apply bg-ink-50 text-ink-900 font-sans dark:bg-ink-900 dark:text-ink-100;
   }
   h1, h2, h3, h4 {
     @apply font-display tracking-tight;
@@ -20,7 +20,7 @@
     @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
   }
   .card {
-    @apply bg-white rounded-2xl border border-ink-200 shadow-sm;
+    @apply bg-white rounded-2xl border border-ink-200 shadow-sm dark:bg-ink-800 dark:border-ink-700;
   }
   .btn {
     @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium transition;
@@ -29,7 +29,7 @@
     @apply btn bg-brand-600 text-white hover:bg-brand-700;
   }
   .btn-ghost {
-    @apply btn text-ink-700 hover:bg-ink-100;
+    @apply btn text-ink-700 hover:bg-ink-100 dark:text-ink-300 dark:hover:bg-ink-700;
   }
   .chip {
     @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;

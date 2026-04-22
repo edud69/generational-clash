@@ -8,11 +8,11 @@ export function SourceLink({ id }: { id: string }) {
       href={s.url}
       target="_blank"
       rel="noreferrer"
-      className="text-xs text-brand-700 hover:underline inline-flex items-center gap-1"
+      className="text-xs text-brand-700 dark:text-brand-400 hover:underline inline-flex items-center gap-1"
       title={`${s.org}${s.year ? ' — ' + s.year : ''}`}
     >
       <span>{s.org}</span>
-      {s.year && <span className="text-ink-400">({s.year})</span>}
+      {s.year && <span className="text-ink-400">{s.year}</span>}
     </a>
   )
 }

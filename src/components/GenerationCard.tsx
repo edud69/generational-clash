@@ -13,10 +13,10 @@ export function GenerationCard({ g }: { g: Generation }) {
           {g.yearRange[0]}–{g.yearRange[1]}
         </span>
       </div>
-      <div className="font-display font-bold text-lg text-ink-900">{g.name}</div>
-      {g.alias && <div className="text-xs text-ink-500 mb-2">aussi appelés {g.alias}</div>}
-      <p className="text-sm text-ink-700 mt-1">{g.tagline}</p>
-      <div className="mt-auto pt-4 text-xs text-brand-600 font-medium group-hover:underline">
+      <div className="font-display font-bold text-lg text-ink-900 dark:text-ink-100">{g.name}</div>
+      {g.alias && <div className="text-xs text-ink-500 dark:text-ink-400 mb-2">aussi appelés {g.alias}</div>}
+      <p className="text-sm text-ink-700 dark:text-ink-300 mt-1">{g.tagline}</p>
+      <div className="mt-auto pt-4 text-xs text-brand-600 dark:text-brand-400 font-medium group-hover:underline">
         Découvrir →
       </div>
     </Link>
